@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>NLP APP | Sentiment Analysis</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+  </head>
+  <body>
+    <div id="login">
+      <h3 class="text-center text-white pt-5">Sentiment Analysis</h3>
+      <div class="container">
+        <div
+          id="login-row"
+          class="row justify-content-center align-items-center"
+        >
+          <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+              <form
+                id="login-form"
+                class="form"
+                action="/dosentimentanalysis"
+                method="post"
+              >
+                <h3 class="text-center text-info">Sentiment Analysis</h3>
+                <div class="form-group">
+                  <label for="ner" class="text-info">Type your text here:</label><br />
+                  <textarea
+                    id="sentiment_text"
+                    name="sentiment_text"
+                    rows="5"
+                    cols="50"
+                    class="form-control"
+                    required
+                  ></textarea>
+                </div>
+                <br />
+                  <input
+                    type="submit"
+                    name="submit"
+                    class="btn btn-info btn-md"
+                    value="Analyze Sentiment"
+                  />
+                </div>
+                <div id="register-link" class="text-right">
+                  <a href="/dashboard" class="text-info">Dashboard</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>

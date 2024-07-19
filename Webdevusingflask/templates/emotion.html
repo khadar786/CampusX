@@ -44,7 +44,7 @@
                     cols="50"
                     class="form-control"
                     required
-                  ></textarea>
+                  >{% if txt %}{{txt}}{% endif %}</textarea>
                 </div>
                 <br />
                   <input
@@ -60,6 +60,43 @@
               </form>
             </div>
           </div>
+          {% if result %}
+          <div
+            class="row justify-content-center align-items-center"
+          >
+            <div class="col-md-6">
+              <div class="col-md-6 offset-3">
+                {% if len(result['emotion'])>0 %}
+                <table class="table">
+                  <tbody>
+                    {% for i in result['emotion'] %}
+                      <tr>
+                        <th>Fear</th><td>{{i['Fear']}}</td>
+                      </tr>
+                      <tr>
+                        <th>Happy</th><td>{{i['Happy']}}</td>
+                      </tr>
+                      <tr>
+                        <th>Angry</th><td>{{i['Angry']}}</td>
+                      </tr>
+                      <tr>
+                        <th>Sad</th><td>{{i['Sad']}}</td>
+                      </tr>
+                      <tr>
+                        <th>Excited</th><td>{{i['Excited']}}</td>
+                      </tr>
+                      <tr>
+                        <th>Bored</th><td>{{i['Bored']}}</td>
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+                </table>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          
+        {% endif %}
         </div>
       </div>
     </div>

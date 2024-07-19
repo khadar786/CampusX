@@ -43,7 +43,7 @@
                     cols="50"
                     class="form-control"
                     required
-                  ></textarea>
+                  >{% if txt %}{{txt}}{% endif %}</textarea>
                 </div>
                 <br />
                   <input
@@ -60,6 +60,36 @@
             </div>
           </div>
         </div>
+        {% if result %}
+          <div
+            class="row justify-content-center align-items-center"
+          >
+            <div class="col-md-6">
+              <div class="col-md-6 offset-3">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Name</th>
+                      <th>Confidence_score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for i in result['entities'] %}
+                      <tr>
+                        <td>{{i['category']}}</td>
+                        <td>{{i['name']}}</td>
+                        <td>{{i['confidence_score']}}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+        {% endif %}
+        
       </div>
     </div>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

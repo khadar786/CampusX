@@ -35,7 +35,7 @@
               >
                 <h3 class="text-center text-info">Sentiment Analysis</h3>
                 <div class="form-group">
-                  <label for="ner" class="text-info">Type your text here:</label><br />
+                  <label for="sentiment_text" class="text-info">Type your text here:</label><br />
                   <textarea
                     id="sentiment_text"
                     name="sentiment_text"
@@ -43,7 +43,7 @@
                     cols="50"
                     class="form-control"
                     required
-                  ></textarea>
+                  >{% if txt %}{{txt}}{% endif %}</textarea>
                 </div>
                 <br />
                   <input
@@ -59,6 +59,30 @@
               </form>
             </div>
           </div>
+          {% if result %}
+          <div
+            class="row justify-content-center align-items-center"
+          >
+            <div class="col-md-6">
+              <div class="col-md-6 offset-3">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>negative</th><td>{{result['sentiment']['negative']}}</td>
+                    </tr>
+                    <tr>
+                      <th>neutral</th><td>{{result['sentiment']['neutral']}}</td>
+                    </tr>
+                    <tr>
+                      <th>positive</th><td>{{result['sentiment']['positive']}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+        {% endif %}
         </div>
       </div>
     </div>

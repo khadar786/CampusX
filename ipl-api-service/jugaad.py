@@ -136,6 +136,7 @@ def bowlerRun(x):
         return 0
     else:
         return x[1]
+    
 bowler_data['bowler_run'] = bowler_data[['extra_type', 'total_run']].apply(bowlerRun, axis=1)
 
 def bowlerWicket(x):
@@ -143,6 +144,7 @@ def bowlerWicket(x):
         return x[1]
     else:
         return 0
+
 bowler_data['isBowlerWicket'] = bowler_data[['kind', 'isWicketDelivery']].apply(bowlerWicket, axis=1)
 
 

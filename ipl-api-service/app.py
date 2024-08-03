@@ -41,11 +41,15 @@ def teamrecord():
 
 @app.route('/api/batting-record')
 def batting_record():
-  pass
+  batsman_name = request.args.get('batsman')
+  response = ipl.batsmanAPI(batsman_name)
+  return response
 
 @app.route('/api/bowling-record')
 def bowling_record():
-  pass
+  bowler_name = request.args.get('bowler')
+  response = ipl.bowlerAPI(bowler_name)
+  return response
 
 if __name__=='__main__':
   app.run(debug=True)

@@ -11,6 +11,8 @@ app.secret_key='IPLAPISERVICE#2024'
 
 #teamrecord
 #http://127.0.0.1:5000/api/team-record?team=Gujarat%20Titans
+#http://127.0.0.1:5000/api/bowling-record?bowler=Kuldeep Yadav
+#http://127.0.0.1:5000/api/batting-record?batsman=KL Rahul
 #players
 @app.route('/')
 def index():
